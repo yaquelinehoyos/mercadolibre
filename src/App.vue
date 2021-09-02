@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <HeaderOptions />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -11,11 +12,13 @@
 
 <script>
 import Header from "@/components/header/Header";
+import HeaderOptions from "@/components/header/HeaderOptions";
 
 export default {
   name: "AppMercadolibre",
   components: {
     Header,
+    HeaderOptions,
   },
 };
 </script>
