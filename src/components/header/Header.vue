@@ -46,6 +46,8 @@ export default {
 
   &__title {
     width: 30%;
+    margin: 0;
+    @include flex-full-center;
   }
 
   &__options {
@@ -54,6 +56,7 @@ export default {
     justify-content: space-between;
 
     .searcher-mercadolibre {
+      width: 70%;
       @include searcher-header;
     }
 
@@ -76,6 +79,31 @@ export default {
         &:hover {
           background-color: darken($color-light-gray, 5%);
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .header-mercadolibre {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+
+    &__title {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__options {
+      width: 100%;
+
+      .searcher-mercadolibre {
+        width: 60%;
+      }
+
+      .right-options {
+        width: 40%;
       }
     }
   }

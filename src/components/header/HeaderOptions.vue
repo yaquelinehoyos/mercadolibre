@@ -16,8 +16,11 @@ export default {
   name: "HeaderOptionsMercadolibre",
   data() {
     return {
-      options: ["Hombre", "Mujer", "Junior", "Niños", "Accesorios", "Ofertas"],
+      options: null,
     };
+  },
+  created() {
+    this.options = this.$store.getters["headerOptions"];
   },
   methods: {
     setBorder(index) {
@@ -40,13 +43,21 @@ export default {
   @include flex-full-center;
 
   &__option {
-    padding: 0px 20px;
+    padding: 0px 30px;
     font-size: 25px;
     cursor: pointer;
   }
 
   .border-right {
     border-right: 1px solid $color-white;
+  }
+}
+
+@media (max-width: 850px) {
+  .header-options-mercadolibre {
+    &__option {
+      font-size: 20px;
+    }
   }
 }
 </style>

@@ -129,4 +129,14 @@ export default {
     }
   }
 }
+
+@media (max-width: 850px) {
+  h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .options-title__option {
+    font-size: 15px !important;
+  }
+}
 </style>
