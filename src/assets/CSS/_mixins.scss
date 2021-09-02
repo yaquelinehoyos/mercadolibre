@@ -4,3 +4,62 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin searcher-header {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+      &__input {
+        width: 70%;
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        background-color: $color-light-gray;
+      }
+
+      &__button {
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        background-color: $color-dark-gray;
+
+        &:hover {
+          background-color: darken($color-dark-gray, 5%);
+        }
+      }
+}
+
+@mixin header-button {
+    position: relative;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: $color-white;
+
+    &:hover {
+        background-color: darken($color-light-gray, 5%);
+    }
+
+    &:active {
+        transform: scale(0.96);
+        
+        .badge-mercadolibre {
+            transform: scale(1.2);
+        }
+    }
+
+    .badge-mercadolibre {
+        height: 20px;
+        width: 20px;
+        padding: 5px;
+        border-radius: 50%;
+        background-color: $color-badge;
+        color: $color-white;
+        font-size: 8px;
+        position: absolute;
+        top: 2px;
+        right: 10px;
+    }
+}

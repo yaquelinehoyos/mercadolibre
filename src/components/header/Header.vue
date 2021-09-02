@@ -38,18 +38,6 @@ export default {
   flex-direction: row;
 }
 
-%div-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-%icon-button {
-  padding: 10px 20px;
-  border: none;
-  outline: none;
-}
-
 .header-mercadolibre {
   background-color: $color-white;
   width: 100%;
@@ -66,59 +54,17 @@ export default {
     justify-content: space-between;
 
     .searcher-mercadolibre {
-      width: 70%;
-      @extend %div-center;
-
-      &__input {
-        width: 70%;
-        padding: 10px 20px;
-        border: none;
-        outline: none;
-        background-color: $color-light-gray;
-      }
-
-      &__button {
-        @extend %icon-button;
-        background-color: $color-dark-gray;
-
-        &:hover {
-          background-color: darken($color-dark-gray, 5%);
-        }
-      }
+      @include searcher-header;
     }
 
     .right-options {
       width: 30%;
-      @extend %div-center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &__button {
-        position: relative;
-        @extend %icon-button;
-        background-color: $color-white;
-
-        &:hover {
-          background-color: darken($color-light-gray, 5%);
-        }
-
-        &:active {
-          transform: scale(0.96);
-          .badge-mercadolibre {
-            transform: scale(1.2);
-          }
-        }
-
-        .badge-mercadolibre {
-          height: 20px;
-          width: 20px;
-          padding: 5px;
-          border-radius: 50%;
-          background-color: $color-badge;
-          color: $color-white;
-          font-size: 8px;
-          position: absolute;
-          top: 2px;
-          right: 10px;
-        }
+        @include header-button;
       }
 
       &__session {
