@@ -59,15 +59,13 @@ export default {
   name: "FooterMercadolibre",
   data() {
     return {
-      policies: [
-        "Políticas de privacidad",
-        "Políticas de cambio",
-        "Políticas de envío",
-        "Términos y condiciones",
-        "Responsabilidad social",
-      ],
-      aboutUs: ["Encuentra tu tienda", "Contáctanos", "Trabaja con nosotros"],
+      policies: null,
+      aboutUs: null,
     };
+  },
+  created() {
+    this.policies = this.$store.getters["footerPolicies"];
+    this.aboutUs = this.$store.getters["footerAboutUs"];
   },
   methods: {
     setMargin(index) {
@@ -113,19 +111,7 @@ export default {
     }
 
     .social-media {
-      &__button {
-        outline: none;
-        height: 50px;
-        width: 50px;
-        border: none;
-        background-color: $color-white;
-        color: $color-black;
-        border-radius: 50%;
-      }
-
-      .margin-left {
-        margin-left: 15px;
-      }
+      @include footer-social-media;
     }
   }
 }

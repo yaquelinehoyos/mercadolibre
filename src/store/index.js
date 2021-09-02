@@ -13,10 +13,28 @@ export default new Vuex.Store({
       "Accesorios",
       "Ofertas",
     ],
+    footerPolicies: [
+      "Políticas de privacidad",
+      "Políticas de cambio",
+      "Políticas de envío",
+      "Términos y condiciones",
+      "Responsabilidad social",
+    ],
+    footerAboutUs: [
+      "Encuentra tu tienda",
+      "Contáctanos",
+      "Trabaja con nosotros",
+    ],
   },
   getters: {
     headerOptions(state) {
       return state.headerOptions;
+    },
+    footerPolicies(state) {
+      return state.footerPolicies;
+    },
+    footerAboutUs(state) {
+      return state.footerAboutUs;
     },
   },
   mutations: {},
