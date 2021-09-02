@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -8,13 +9,24 @@
   </div>
 </template>
 
+<script>
+import Header from "@/components/header/Header";
+
+export default {
+  name: "AppMercadolibre",
+  components: {
+    Header,
+  },
+};
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: $primary-color;
+  color: $color-black;
 }
 
 #nav {
@@ -23,7 +35,7 @@
 
 #nav a {
   font-weight: bold;
-  color: $primary-color;
+  color: $color-black;
 }
 
 #nav a.router-link-exact-active {
