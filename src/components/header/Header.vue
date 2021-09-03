@@ -56,12 +56,12 @@ export default {
     justify-content: space-between;
 
     .searcher-mercadolibre {
-      width: 70%;
+      width: 60%;
       @include searcher-header;
     }
 
     .right-options {
-      width: 30%;
+      width: 40%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -84,7 +84,7 @@ export default {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   .header-mercadolibre {
     display: flex;
     flex-direction: column;
@@ -97,14 +97,6 @@ export default {
 
     &__options {
       width: 100%;
-
-      .searcher-mercadolibre {
-        width: 60%;
-      }
-
-      .right-options {
-        width: 40%;
-      }
     }
   }
 }
