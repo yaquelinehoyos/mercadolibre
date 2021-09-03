@@ -1,11 +1,16 @@
 <template>
-  <div class="home">
-    <h1>HOMEPAGE</h1>
+  <div class="homepage-mercadolibre">
+    <MainBanner />
   </div>
 </template>
 
 <script>
+import MainBanner from "./MainBanner.vue";
+
 export default {
-  name: "Home",
+  name: "HomepageMercadolibre",
+  components: {
+    MainBanner,
+  },
 };
 </script>
