@@ -41,6 +41,7 @@ export default {
   color: $color-white;
   padding: 15px 50px;
   @include flex-full-center;
+  flex-direction: row;
 
   &__option {
     padding: 0px 30px;

@@ -63,6 +63,7 @@ export default {
     width: 30%;
     margin: 0;
     @include flex-full-center;
+    flex-direction: row;
   }
 
   &__options {
