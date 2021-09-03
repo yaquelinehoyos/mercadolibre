@@ -43,7 +43,6 @@ export default {
   text-align: center;
 
   .arrow-banner {
-
     &__button-left {
       @extend %arrow-button;
       left: 30px;
@@ -62,7 +61,6 @@ export default {
 
 @media (max-width: 1300px) {
   .arrow-banner {
-
     &__button-left {
       width: 70px !important;
       height: auto;
@@ -77,7 +75,6 @@ export default {
 
 @media (max-width: 800px) {
   .arrow-banner {
-      
     &__button-left {
       width: 50px !important;
       height: auto;
