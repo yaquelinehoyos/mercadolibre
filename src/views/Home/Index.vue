@@ -1,11 +1,22 @@
 <template>
-  <div class="home">
-    <h1>HOMEPAGE</h1>
+  <div class="homepage-mercadolibre">
+    <MainBanner />
+    <Categories />
+    <PopularProducts />
   </div>
 </template>
 
 <script>
+import MainBanner from "./MainBanner.vue";
+import Categories from "./Categories.vue";
+import PopularProducts from "./PopularProducts.vue";
+
 export default {
-  name: "Home",
+  name: "HomepageMercadolibre",
+  components: {
+    MainBanner,
+    Categories,
+    PopularProducts,
+  },
 };
 </script>

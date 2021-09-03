@@ -7,8 +7,12 @@
       </h1>
       <div class="right-options">
         <button class="right-options__button">
-          <i class="fas fa-shopping-cart fa-lg"></i
-          ><span class="badge-mercadolibre">2</span>
+          <img
+            src="../../assets/icons/icon-cart.svg"
+            alt="search"
+            width="25px"
+            height="25px"
+          /><span class="badge-mercadolibre">2</span>
         </button>
       </div>
     </div>
@@ -19,7 +23,12 @@
         placeholder="Buscar aquí producto"
       />
       <button class="searcher-mercadolibre__button">
-        <i class="fas fa-search fa-lg"></i>
+        <img
+          src="../../assets/icons/icon-search.svg"
+          alt="search"
+          width="20px"
+          height="20px"
+        />
       </button>
     </div>
   </div>
