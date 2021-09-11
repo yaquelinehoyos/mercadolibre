@@ -16,7 +16,6 @@ export default {
         let response = await axios.get(
           `https://api.mercadolibre.com/sites/MCO/search?category=${categoriId}`
         );
-        console.log(response);
         if (response.status == 200) {
           commit("setProducts", response.data.results);
         }

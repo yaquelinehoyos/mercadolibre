@@ -7,7 +7,7 @@
       class="card-product-mercadolibre__image"
     />
     <div class="card-product-mercadolibre__info">
-      <h5>
+      <h5 class="card-product-mercadolibre__title">
         <strong>{{ product.title }}</strong>
       </h5>
       <div class="product-price">
@@ -90,6 +90,10 @@ export default {
       background-color: $color-black;
       color: $color-white;
     }
+  }
+
+  &__title {
+    height: 80px;
   }
 }
 </style>
