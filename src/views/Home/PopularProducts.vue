@@ -27,6 +27,7 @@
 
 <script>
 import CardProduct from "@/components/CardProduct";
+import { mapState } from "vuex";
 
 export default {
   name: "PopularProductsMercadolibre",
@@ -35,59 +36,36 @@ export default {
   },
   data() {
     return {
-      products: [
-        {
-          id: 1,
-          name: "Blusa color sólido manga larga Talla M",
-          price: "$200.452",
-          before: "$100.452",
-          discount: null,
-          imageName: "fn2bnZ",
-        },
-        {
-          id: 2,
-          name: "Pantalón silueta skinny color sólido",
-          price: "$200.452",
-          before: "$100.452",
-          discount: "- 50%",
-          imageName: "vwfphY",
-        },
-        {
-          id: 3,
-          name: "Enterizo estampado flores tropical",
-          price: "$200.452",
-          before: "$100.452",
-          discount: "- 50%",
-          imageName: "AK5Eyw",
-        },
-        {
-          id: 4,
-          name: "Blusa asimétrica escote profundo",
-          price: "$200.452",
-          before: "$100.452",
-          discount: "- 50%",
-          imageName: "Ps96Iq",
-        },
-      ],
+      products: [],
     };
   },
+  computed: {
+    ...mapState({
+      productsFromVuex: (state) => state.products.products,
+    }),
+  },
+  watch: {
+    productsFromVuex() {
+      this.products = this.productsFromVuex;
+    },
+  },
   methods: {
-      scrollCards(direction) {
-        let element = document.getElementById('popular-products-cards');
-        let scrollAmount = 0;
-        let slideTimer = setInterval(function(){
-            if(direction == 'left'){
-                element.scrollLeft -= 300;
-            } else {
-                element.scrollLeft += 300;
-            }
-            scrollAmount += 300;
-            if(scrollAmount >= 100){
-                window.clearInterval(slideTimer);
-            }
-        }, 25);
-      },
-  }
+    scrollCards(direction) {
+      let element = document.getElementById("popular-products-cards");
+      let scrollAmount = 0;
+      let slideTimer = setInterval(function () {
+        if (direction == "left") {
+          element.scrollLeft -= 300;
+        } else {
+          element.scrollLeft += 300;
+        }
+        scrollAmount += 300;
+        if (scrollAmount >= 100) {
+          window.clearInterval(slideTimer);
+        }
+      }, 25);
+    },
+  },
 };
 </script>
 
@@ -102,16 +80,16 @@ export default {
     margin-top: 50px;
 
     .popular-products-arrow {
-        cursor: pointer;
-        margin: 0px 10px;
+      cursor: pointer;
+      margin: 0px 10px;
     }
 
     .popular-products-cards {
       width: 100%;
       @include flex-full-center;
       justify-content: flex-start;
+      align-items: flex-start;
       flex-direction: row;
-      align-items: stretch;
       overflow: hidden;
     }
   }
