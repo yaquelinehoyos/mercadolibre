@@ -1,20 +1,19 @@
 <template>
   <div class="card-product-mercadolibre">
-    <span v-if="product.discount" class="card-product-mercadolibre__discount-bage">{{ product.discount }}</span>
+    <!-- <span class="card-product-mercadolibre__discount-bage">- 50%</span> -->
     <img
-      :src="require(`../assets/images/${product.imageName}.png`)"
+      :src="product.thumbnail"
       :alt="product.name"
       class="card-product-mercadolibre__image"
     />
     <div class="card-product-mercadolibre__info">
       <h5>
-        <strong>{{ product.name }}</strong>
+        <strong>{{ product.title }}</strong>
       </h5>
       <div class="product-price">
         <h4 class="product-price__actual">
-          <strong>{{ product.price }}</strong>
+          <strong>$ {{ product.price }}</strong>
         </h4>
-        <h4 class="product-price__old">{{ product.before }}</h4>
       </div>
       <button class="add-cart-button">
         <i class="fas fa-shopping-cart"></i> Agregar al carrito
@@ -58,7 +57,7 @@ export default {
   &__image {
     width: 100%;
     height: 600px;
-    object-fit:cover;
+    object-fit: cover;
   }
 
   &__info {

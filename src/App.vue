@@ -27,6 +27,14 @@ export default {
     Footer,
     FooterMovile,
   },
+  async created() {
+    //this.$store.dispatch("oauth/getToken");
+    let categories = await this.$store.dispatch("categories/getCategories");
+    let clotheAndAccessories = categories.find(
+      (category) => category.name == "Ropa y Accesorios"
+    );
+    this.$store.dispatch("products/getProducts", clotheAndAccessories.id);
+  },
 };
 </script>
 
