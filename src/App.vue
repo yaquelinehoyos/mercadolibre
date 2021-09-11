@@ -17,6 +17,7 @@ import HeaderOptions from "@/components/header/HeaderOptions";
 import HeaderMovile from "@/components/header/HeaderMovile";
 import Footer from "@/components/footer/Footer";
 import FooterMovile from "@/components/footer/FooterMovile";
+import { mapState } from "vuex";
 
 export default {
   name: "AppMercadolibre",
@@ -26,6 +27,38 @@ export default {
     HeaderMovile,
     Footer,
     FooterMovile,
+  },
+  computed: {
+    ...mapState({
+      productsFilter: (state) => state.products.productsFilter,
+    }),
+  },
+  watch: {
+    productsFilter() {
+      if (this.productsFilter != null) {
+        this.$router.push({ name: "Products" }).catch((err) => {
+          if (
+            err.name !== "NavigationDuplicated" &&
+            !err.message.includes(
+              "Avoided redundant navigation to current location"
+            )
+          ) {
+            // logError(err);
+          }
+        });
+      } else {
+        this.$router.push({ name: "Home" }).catch((err) => {
+          if (
+            err.name !== "NavigationDuplicated" &&
+            !err.message.includes(
+              "Avoided redundant navigation to current location"
+            )
+          ) {
+            // logError(err);
+          }
+        });
+      }
+    },
   },
   async created() {
     //this.$store.dispatch("oauth/getToken");

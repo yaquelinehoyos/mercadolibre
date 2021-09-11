@@ -55,14 +55,17 @@ export default {
   }
 
   &__image {
-    width: 100%;
-    height: 600px;
+    width: 300px;
+    height: auto;
     object-fit: cover;
   }
 
   &__info {
     padding: 20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
     .product-price {
       margin: 20px 0px;

@@ -6,6 +6,7 @@
         <input
           class="searcher-mercadolibre__input"
           type="text"
+          v-model="productName"
           placeholder="Buscar aquí producto"
         />
         <button class="searcher-mercadolibre__button">
@@ -44,6 +45,20 @@
 <script>
 export default {
   name: "HeaderMercadolibre",
+  data() {
+    return {
+      productName: null,
+    };
+  },
+  watch: {
+    productName() {
+      if (this.productName != null && this.productName != "") {
+        this.$store.dispatch("products/searchProducts", this.productName);
+      } else {
+        this.$store.commit("products/clearProductsFilter");
+      }
+    },
+  },
 };
 </script>
 

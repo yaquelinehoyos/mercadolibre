@@ -88,8 +88,8 @@ export default {
       width: 100%;
       @include flex-full-center;
       justify-content: flex-start;
+      align-items: flex-start;
       flex-direction: row;
-      align-items: stretch;
       overflow: hidden;
     }
   }
